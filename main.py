@@ -40,7 +40,7 @@ width, height = img.size
 img.show()
 
 if input("Sauvegarder l'image ?  ") == 'oui':
-    img.save('qrcode.png')
+    img.save('generate/qrcode.png')
     print("Image sauvegardée")
 else:
     print("Image non sauvegardée !")
