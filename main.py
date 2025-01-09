@@ -1,6 +1,10 @@
 import qrcode
 from PIL import Image, ImageDraw
 
+
+PLOT_IMAGE = False
+
+
 text = input("Entrez le texte à encoder dans le QR code: ")
 
 # Générer le QR code
@@ -37,10 +41,15 @@ width, height = img.size
 
 
 # Afficher l'image pour vérifier
-img.show()
+if PLOT_IMAGE:
+    img.show()
 
-if input("Sauvegarder l'image ?  ") == 'oui':
+    if input("Sauvegarder l'image ?  ") == 'oui':
+        img.save('generate/qrcode.png')
+        print("Image sauvegardée")
+    else:
+        print("Image non sauvegardée !")
+
+else :
     img.save('generate/qrcode.png')
     print("Image sauvegardée")
-else:
-    print("Image non sauvegardée !")
